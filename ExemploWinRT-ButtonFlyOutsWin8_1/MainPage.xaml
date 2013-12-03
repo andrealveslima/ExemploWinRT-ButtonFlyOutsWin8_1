@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="ExemploWinRT_ButtonFlyOutsWin8_1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExemploWinRT_ButtonFlyOutsWin8_1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Main, Source={StaticResource Locator}}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="Selecionar Nome"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom">
+            <Button.Flyout>
+                <Flyout>
+                    <StackPanel>
+                        <TextBlock Text="Digite o nome a ser utilizado:" />
+                        <TextBox Text="{Binding Nome, Mode=TwoWay}" />
+                        <Button Content="OK"
+                                Command="{Binding MostrarNome}" 
+                                HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+    </Grid>
+</Page>
